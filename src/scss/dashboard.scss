@@ -1,0 +1,100 @@
+@import "variables";
+@import "mixins";
+
+.db {
+  &__header {
+    height: $db-header-height;
+    background: $bg_table_cell;
+
+    z-index: 10;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px 2px rgba(60, 64, 67, 0.2);
+  }
+
+  &__new {
+    background: $bg_table;
+
+    margin-top: $db-header-height;
+    padding: 1.5rem;
+  }
+
+  &__create {
+    background: $bg_table_cell;
+    border: 1px solid $border;
+    color: $default-color;
+
+    width: 160px;
+    height: 160px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    &:hover {
+      color: $btn_active;
+      border-color: $border_2;
+
+      cursor: pointer;
+    }
+  }
+
+  &__view {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  &__table {
+    padding: 1rem;
+  }
+
+  &__list{
+    @include clear-list();
+
+  }
+
+  &__list-header {
+    color: $default-color2;
+
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding: 0 12px;
+  }
+  &__record {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 14px 12px 16px;
+    margin-bottom: 10px;
+
+    &:hover {
+      background: $btn_active;
+      border-radius: 25px;
+    }
+
+    a {
+      color: $default-color2;
+
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 16px;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+    }
+
+
+}
