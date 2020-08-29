@@ -1,6 +1,6 @@
-import { DomListener } from "@core/DomListener";
+import {DomListener} from '@core/DomListener';
 
-export class ExcelComponent {
+export class ExcelComponent extends DomListener {
   //  Returns component html template
   toHTML() {
     return '';
