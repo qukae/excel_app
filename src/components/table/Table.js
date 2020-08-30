@@ -1,7 +1,57 @@
 import {ExcelComponent} from '@core/ExcelComponent';
 
 export class Table extends ExcelComponent {
-  toHTML(){
-    return '<h1>Table</h1>'
+  // static className = 'excel__table';
+  static className() {
+    const name = 'excel__table'
+    return name;
+     }
+
+  toHTML() {
+    return `
+    <div class="row">
+
+    <div class="row-info">
+
+    </div>
+
+    <div class="row-data">
+      <div class="column">
+        A
+      </div>
+      <div class="column">
+        B
+      </div>
+      <div class="column">
+        C
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="row-info">
+      1
+    </div>
+
+    <div class="row-data">
+      <div class="cell selected" >A1</div>
+      <div class="cell">B1</div>
+      <div class="cell">C1</div>
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="row-info">
+      1
+    </div>
+
+    <div class="row-data">
+      <div class="cell selected" >A1</div>
+      <div class="cell">B1</div>
+      <div class="cell">C1</div>
+    </div>
+  </div>
+    `
   }
 }
