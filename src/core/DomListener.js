@@ -15,13 +15,22 @@ export class DomListener {
       if (!this[method]) {
         throw new Error(`Method ${method} has no implementation in ${this.name} component`);
       }
+      this[method] = this[method].bind(this);
       // same as addEventListener
-      this.$root.on(listener, this[method].bind(this));
+      this.$root.on(listener, this[method]);
     });
   }
 
   removeDomListeners() {
-
+    // console.log(this.listeners, this.$root);
+    this.listeners.forEach((listener) => {
+      const method = getMethodName(listener);
+      if (!this[method]) {
+        throw new Error(`Method ${method} has no implementation in ${this.name} component`);
+      }
+      // same as addEventListener
+      this.$root.off(listener, this[method]);
+    });
   }
 }
 
