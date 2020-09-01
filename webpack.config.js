@@ -15,6 +15,7 @@ const jsLoaders = () => {
       loader: 'babel-loader',
       options: {
         presets: ['@babel/preset-env'],
+        plugins: [require("@babel/plugin-proposal-class-properties"), { loose: false }]
       },
     },
   ];
@@ -25,6 +26,7 @@ const jsLoaders = () => {
 };
 
 module.exports = {
+
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
   entry: ['@babel/polyfill', './index.js'],
