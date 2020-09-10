@@ -1,4 +1,11 @@
-import {TABLE_RESIZE, CHANGE_STYLES, CHANGE_TEXT, APPLY_STYLE, CHANGE_TITLE} from '@/redux/types';
+import {
+  TABLE_RESIZE,
+  CHANGE_STYLES,
+  CHANGE_TEXT,
+  APPLY_STYLE,
+  CHANGE_TITLE,
+  UPDATE_DATE,
+} from '@/redux/types';
 
 
 // Action Kreator
@@ -6,6 +13,12 @@ export function tableResize(data) {
   return {
     type: TABLE_RESIZE,
     data,
+  };
+}
+
+export function updateDate() {
+  return {
+    type: UPDATE_DATE,
   };
 }
 
