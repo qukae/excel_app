@@ -16,6 +16,11 @@ class Dom {
     }
     return this.$el.outerHTML.trim();
   }
+
+  clear() {
+    this.html('');
+    return this;
+  }
   text(text) {
     if (typeof text !=='undefined') {
       this.$el.textContent = text;
